@@ -1,24 +1,47 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+		<uni-list>
+			<uni-list-item v-for="item in dataList" :key="item.id" :title="item.title" :note="item.summary" :thumb="item.author_avatar" @click="pageToDetail(item)">
+			</uni-list-item>
+		</uni-list>
 	</view>
 </template>
 
 <script>
+	import uniList from "@/components/uni-list/uni-list.vue"
+	import uniListItem from "@/components/uni-list-item/uni-list-item.vue"
+
+	import {
+		getNews
+	} from '@/api/testApi.js'
 	export default {
+		components: {
+			uniList,
+			uniListItem
+		},
 		data() {
 			return {
-				title: 'Hello'
+				dataList: []
 			}
 		},
 		onLoad() {
-
+			this.getNews()
 		},
 		methods: {
-
+			async getNews() {
+				try {
+					const {
+						data
+					} = await getNews()
+					this.dataList = data
+					this.$storage.set('newsList',this.dataList)
+				} catch (e) {
+					//TODO handle the exception
+				}
+			},
+			pageToDetail(item){
+				this.$pageTo.push({url:`../detail/index?id=${item.id}`})
+			}
 		}
 	}
 </script>

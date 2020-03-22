@@ -1,5 +1,15 @@
 # my-project
 
+## use vuecli methods
+### install vuecli for global
+```
+npm install -g @vue/cli
+```
+### create project
+```
+vue create -p dcloudio/uni-preset-vue projectName
+```
+
 ## Project setup
 ```
 npm install
