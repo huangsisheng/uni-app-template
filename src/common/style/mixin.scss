@@ -1,0 +1,13 @@
+// 混合样式
+@mixin wh($w,$h) {
+	width: r($w);
+	height: r($h);
+}
+
+
+@mixin bImg($url) {
+	background: url($url+"@2x.png") no-repeat center center;
+	@media (-webkit-min-device-pixel-ratio:3) and(min-device-pixel-ratio:3) {
+		background: url($url+"@3x.png") no-repeat center center;
+	}
+}

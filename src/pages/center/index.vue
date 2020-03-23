@@ -10,8 +10,9 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.center{
-		font-size: 12rpx;
+		font-size: r(24);
+		color: $uni-color-primary;
 	}
 </style>

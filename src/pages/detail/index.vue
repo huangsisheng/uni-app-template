@@ -27,7 +27,7 @@
 					this.detailCon.content = this.detailCon.content || `<p style="text-align:center;margin-top:100px;">您访问的资源走丢了，请稍后再试。<p>`
 				} catch (e) {
 					//TODO handle the exception
-				}
+				}  
 			},
 		}
 	}

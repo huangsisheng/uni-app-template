@@ -40,7 +40,7 @@ function reLaunch({
 function switchtab({
 	url
 }) {
-	uni.showTabBar({
+	uni.switchTab({
 		url: url
 	})
 }

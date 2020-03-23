@@ -58,6 +58,9 @@
                     "target" : "https://unidemo.dcloud.net.cn"
                 }
             }
+        },
+        "sdkConfigs" : {
+            "maps" : {}
         }
     },
     "quickapp" : {},
