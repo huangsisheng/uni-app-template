@@ -3,7 +3,7 @@
 const storage = {
 	get: function(key) {
 		try{
-			return JSON.parse(uni.getStorageSync(key))
+			return JSON.parse(uni.getStorageSync(key)) || ''
 		}catch(e){
 			throw new Error(`获取storage:${key}信息失败`)
 			//TODO handle the exception
@@ -11,7 +11,7 @@ const storage = {
 	},
 	set: function(key,value) {
 		try{
-			let data = typeof value === 'object' && JSON.stringify(value)
+			const data = typeof value === 'object' && JSON.stringify(value)
 			uni.setStorageSync(key,data)
 		}catch(e){
 			//TODO handle the exception
